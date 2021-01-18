@@ -1,8 +1,8 @@
 <?php
 
-namespace Database\Factories;
+namespace Akkurate\LaravelAccountSubmodule\Database\Factories;
 
-use App\Models\Account;
+use Akkurate\LaravelAccountSubmodule\Models\Account;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AccountFactory extends Factory

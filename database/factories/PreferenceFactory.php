@@ -1,8 +1,8 @@
 <?php
 
-namespace Database\Factories;
+namespace Akkurate\LaravelAccountSubmodule\Database\Factories;
 
-use App\Models\Preference;
+use Akkurate\LaravelAccountSubmodule\Models\Preference;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PreferenceFactory extends Factory
@@ -17,7 +17,7 @@ class PreferenceFactory extends Factory
     public function definition()
     {
         return [
-            'preferenceable_type' => 'App\Models\Account',
+            'preferenceable_type' => 'Akkurate\LaravelAccountSubmodule\Models\Account',
             'preferenceable_id' => 1,
             'target' => $this->faker->randomElement(['both', 'b2c', 'b2b']),
             'pagination' => $this->faker->numberBetween(1, 500),

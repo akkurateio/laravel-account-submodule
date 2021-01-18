@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Policies;
+namespace Akkurate\LaravelAccountSubmodule\Policies;
 
-use App\Models\User;
+use Akkurate\LaravelAccountSubmodule\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Spatie\Permission\Models\Permission;
 
-class PermissionPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
 
@@ -25,19 +24,22 @@ class PermissionPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('list permissions');
+        return $user->can('list users');
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  User  $user
-     * @param  Permission  $permission
+     * @param  User  $target
      * @return mixed
      */
-    public function view(User $user, Permission  $permission)
+    public function view(User $user, User $target)
     {
-        return $user->can('read permission');
+        $children = auth()->user()->account->children->pluck('id');
+
+        return $user->can('read user')
+            && $user->account_id === $target->account_id || $children->contains($target->account_id);
     }
 
     /**
@@ -48,41 +50,47 @@ class PermissionPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create permission');
+        return $user->can('create user');
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  User  $user
-     * @param  Permission  $permission
+     * @param  User  $target
      * @return mixed
      */
-    public function update(User $user, Permission $permission)
+    public function update(User $user, User $target)
     {
-        return $user->can('update permission');
+        $children = auth()->user()->account->children->pluck('id');
+
+        return $user->can('update user')
+            && $user->account_id === $target->account_id || $children->contains($target->account_id);
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  User  $user
-     * @param  Permission  $permission
+     * @param  User  $target
      * @return mixed
      */
-    public function delete(User $user, Permission $permission)
+    public function delete(User $user, User $target)
     {
-        return $user->can('delete permission');
+        $children = auth()->user()->account->children->pluck('id');
+
+        return $user->can('delete user')
+            && $user->account_id === $target->account_id || $children->contains($target->account_id);
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  User  $user
-     * @param  Permission  $permission
+     * @param  User  $target
      * @return mixed
      */
-    public function restore(User $user, Permission $permission)
+    public function restore(User $user, User $target)
     {
         //
     }
@@ -91,10 +99,10 @@ class PermissionPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  User  $user
-     * @param  Permission  $permission
+     * @param  User  $target
      * @return mixed
      */
-    public function forceDelete(User $user, Permission $permission)
+    public function forceDelete(User $user, User $target)
     {
         //
     }

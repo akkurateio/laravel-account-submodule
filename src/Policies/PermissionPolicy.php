@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Policies;
+namespace Akkurate\LaravelAccountSubmodule\Policies;
 
-use App\Models\User;
+use Akkurate\LaravelAccountSubmodule\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
-class RolePolicy
+class PermissionPolicy
 {
     use HandlesAuthorization;
 
@@ -25,19 +25,19 @@ class RolePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('list roles');
+        return $user->can('list permissions');
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  User  $user
-     * @param  Role  $role
+     * @param  Permission  $permission
      * @return mixed
      */
-    public function view(User $user, Role  $role)
+    public function view(User $user, Permission  $permission)
     {
-        return $user->can('read role');
+        return $user->can('read permission');
     }
 
     /**
@@ -48,41 +48,41 @@ class RolePolicy
      */
     public function create(User $user)
     {
-        return $user->can('create role');
+        return $user->can('create permission');
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  User  $user
-     * @param  Role  $role
+     * @param  Permission  $permission
      * @return mixed
      */
-    public function update(User $user, Role $role)
+    public function update(User $user, Permission $permission)
     {
-        return $user->can('update role');
+        return $user->can('update permission');
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  User  $user
-     * @param  Role  $role
+     * @param  Permission  $permission
      * @return mixed
      */
-    public function delete(User $user, Role $role)
+    public function delete(User $user, Permission $permission)
     {
-        return $user->can('delete role');
+        return $user->can('delete permission');
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  User  $user
-     * @param  Role  $role
+     * @param  Permission  $permission
      * @return mixed
      */
-    public function restore(User $user, Role $role)
+    public function restore(User $user, Permission $permission)
     {
         //
     }
@@ -91,10 +91,10 @@ class RolePolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  User  $user
-     * @param  Role  $role
+     * @param  Permission  $permission
      * @return mixed
      */
-    public function forceDelete(User $user, Role $role)
+    public function forceDelete(User $user, Permission $permission)
     {
         //
     }

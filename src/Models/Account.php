@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace Akkurate\LaravelAccountSubmodule\Models;
 
-use App\Traits\IsActivable;
+use Akkurate\LaravelAccountSubmodule\Traits\IsActivable;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Factories;
+namespace Akkurate\LaravelAccountSubmodule\Database\Factories;
 
-use App\Models\Account;
-use App\Models\User;
+use Akkurate\LaravelAccountSubmodule\Models\Account;
+use Akkurate\LaravelAccountSubmodule\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

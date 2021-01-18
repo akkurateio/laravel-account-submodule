@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Seeders;
+namespace Akkurate\LaravelAccountSubmodule\Database\Seeders;
 
 use Akkurate\LaravelContact\Models\Type;
-use App\Models\Account;
+use Akkurate\LaravelAccountSubmodule\Models\Account;
 use Illuminate\Database\Seeder;
 
 class AccountsTableSeeder extends Seeder

@@ -31,7 +31,7 @@ class LaravelAccountSubmoduleServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(
             __DIR__ . '/../config/laravel-account-submodule.php',
-            'account-submodule-config'
+            'laravel-account-submodule'
         );
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Database\Seeders;
+namespace Akkurate\LaravelAccountSubmodule\Database\Seeders;
 
-use App\Models\User;
+use Akkurate\LaravelAccountSubmodule\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserHasRolesTableSeeder extends seeder

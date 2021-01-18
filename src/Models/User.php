@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace Akkurate\LaravelAccountSubmodule\Models;
 
-use App\Notifications\ResetPasswordNotification;
-use App\Traits\HasAccount;
-use App\Traits\IsActivable;
+use Akkurate\LaravelAccountSubmodule\Notifications\ResetPasswordNotification;
+use Akkurate\LaravelAccountSubmodule\Traits\HasAccount;
+use Akkurate\LaravelAccountSubmodule\Traits\IsActivable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;

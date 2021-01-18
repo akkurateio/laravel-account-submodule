@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Traits;
+namespace Akkurate\LaravelAccountSubmodule\Traits;
 
-use App\Models\Account;
+use Akkurate\LaravelAccountSubmodule\Models\Account;
 use Illuminate\Database\Eloquent\Builder;
 
 /**

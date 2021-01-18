@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace Akkurate\LaravelAccountSubmodule\Providers;
 
-use App\Policies\PermissionPolicy;
-use App\Policies\RolePolicy;
-use App\Models\Account;
-use App\Models\User;
-use App\Policies\AccountPolicy;
-use App\Policies\UserPolicy;
+use Akkurate\LaravelAccountSubmodule\Policies\PermissionPolicy;
+use Akkurate\LaravelAccountSubmodule\Policies\RolePolicy;
+use Akkurate\LaravelAccountSubmodule\Models\Account;
+use Akkurate\LaravelAccountSubmodule\Models\User;
+use Akkurate\LaravelAccountSubmodule\Policies\AccountPolicy;
+use Akkurate\LaravelAccountSubmodule\Policies\UserPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;

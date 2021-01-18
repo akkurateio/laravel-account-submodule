@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace Akkurate\LaravelAccountSubmodule\Traits;
 
 /**
  * Trait IsActivable
