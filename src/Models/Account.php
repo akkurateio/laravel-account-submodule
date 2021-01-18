@@ -2,6 +2,7 @@
 
 namespace Akkurate\LaravelAccountSubmodule\Models;
 
+use Akkurate\LaravelAccountSubmodule\Database\Factories\AccountFactory;
 use Akkurate\LaravelAccountSubmodule\Traits\IsActivable;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Builder;
@@ -49,6 +50,16 @@ class Account extends Model implements Searchable
         self::creating(function ($model) {
             $model->uuid = (string)Uuid::generate(4);
         });
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return AccountFactory::new();
     }
 
     /**

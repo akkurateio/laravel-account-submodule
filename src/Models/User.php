@@ -2,6 +2,7 @@
 
 namespace Akkurate\LaravelAccountSubmodule\Models;
 
+use Akkurate\LaravelAccountSubmodule\Database\Factories\UserFactory;
 use Akkurate\LaravelAccountSubmodule\Notifications\ResetPasswordNotification;
 use Akkurate\LaravelAccountSubmodule\Traits\HasAccount;
 use Akkurate\LaravelAccountSubmodule\Traits\IsActivable;
@@ -90,6 +91,16 @@ class User extends Authenticatable implements Searchable
         self::creating(function ($model) {
             $model->uuid = (string)Uuid::generate(4);
         });
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return UserFactory::new();
     }
 
     public function getSearchResult(): SearchResult
