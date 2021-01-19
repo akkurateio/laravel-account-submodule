@@ -12,11 +12,17 @@ trait HasAccount
 {
     public function account()
     {
+        if (class_exists(\App\Models\Account::class)) {
+            return $this->belongsTo(\App\Models\Account::class);
+        }
         return $this->belongsTo(Account::class);
     }
 
     public function accounts()
     {
+        if (class_exists(\App\Models\Account::class)) {
+            return $this->belongsToMany(\App\Models\Account::class, 'admin_account_user');
+        }
         return $this->belongsToMany(Account::class, 'admin_account_user');
     }
 
