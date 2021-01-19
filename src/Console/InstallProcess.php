@@ -79,10 +79,6 @@ class InstallProcess extends Command
         $this->replaceInFile('namespace Akkurate\\LaravelAccountSubmodule\\', 'namespace App\\', app_path('Traits/HasAccount.php'));
         $this->replaceInFile('namespace Akkurate\\LaravelAccountSubmodule\\', 'namespace App\\', app_path('Traits/IsActivable.php'));
 
-        //Rules
-        $this->replaceInFile('namespace Akkurate\\LaravelAccountSubmodule\\', 'namespace App\\', app_path('Rules/Firstname.php'));
-        $this->replaceInFile('namespace Akkurate\\LaravelAccountSubmodule\\', 'namespace App\\', app_path('Rules/Lastname.php'));
-
         //Requests
         $this->replaceInFile('namespace Akkurate\\LaravelAccountSubmodule\\', 'namespace App\\', app_path('Http/Requests/Account/CreateAccountRequest.php'));
         $this->replaceInFile('namespace Akkurate\\LaravelAccountSubmodule\\', 'namespace App\\', app_path('Http/Requests/Account/UpdateAccountRequest.php'));
@@ -162,9 +158,6 @@ class InstallProcess extends Command
 
         // Models...
         (new Filesystem)->copyDirectory(__DIR__.'/../../src/Models', app_path('Models'));
-
-        // Rules...
-        (new Filesystem)->copyDirectory(__DIR__.'/../../src/Rules', app_path('Rules'));
 
         // Traits...
         (new Filesystem)->copyDirectory(__DIR__.'/../../src/Traits', app_path('Traits'));
