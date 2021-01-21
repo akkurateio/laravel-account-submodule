@@ -7,6 +7,12 @@ return [
      */
     'default-password' => env('DEFAULT_PASSWORD', 'password'),
 
+
+    /**
+     * Default pagination for the application.
+     */
+    'pagination' => env('API_PAGINATION', 50),
+
     /*
     |--------------------------------------------------------------------------
     | Package Seeds

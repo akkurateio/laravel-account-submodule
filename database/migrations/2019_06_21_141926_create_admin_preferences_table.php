@@ -18,7 +18,7 @@ class CreateAdminPreferencesTable extends Migration
 			$table->unsignedBigInteger('preferenceable_id');
 			$table->string('preferenceable_type');
             $table->enum('target', ['both', 'b2c', 'b2b'])->nullable()->default('both');
-            $table->integer('pagination')->nullable()->default(config('api.pagination'));
+            $table->integer('pagination')->nullable()->default(config('laravel-account-submodule.pagination'));
             if (config('laravel-i18n')) {
                 $table->foreignId('language_id')->nullable()->constrained('admin_languages');
             }
