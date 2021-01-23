@@ -59,7 +59,12 @@ class User extends Authenticatable implements Searchable
         'id',
         'uuid'
     ];
-
+    
+    /**
+     * @var string
+     */
+    protected $guard_name = 'web';
+    
     /**
      * The attributes that should be hidden for arrays.
      *
